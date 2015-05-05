@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var util = require('util'),
+		exec = require('child_process').exec,
+		colors = require('colors'),
+		execCommand;
+
+var args = process.argv.slice(2);
+
+if(args[0]){
+	var execString;
+	var fileExtension = args[0].split('.').pop();
+	var targetFile = (args[2]) ? args[2] : args[0].split('.').shift() + '.css';
+	if(fileExtension == 'less') execString = './node_modules/less/bin/lessc ' + args[0] + ' > ' + targetFile;
+	else if(fileExtension == 'scss') execString = './node_modules/node-sass/bin/node-sass <' + args[0] + '> ' + targetFile;
+	else if(fileExtension == 'styl') execString = './node_modules/stylus/bin/stylus < ' + args[0] + ' > ' + targetFile;
+	else {
+		console.log('Error: Wrong file extension'.red);
+		process.exit();
+	}
+	execCommand = exec(execString,
+	  function (error, stdout, stderr) {
+	    if (error !== null) {
+	      console.log(error.red);
+	    }
+	    else {
+	    	var logString = 'Compiled successfully into ' + targetFile;
+	    	console.log(logString.green);	
+	    }
+	});
+}
