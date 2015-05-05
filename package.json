@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Simple shell-compiler to convert .less .styl .scss files into .css",
   "author": "alexqeo",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/alexqeo/compalius",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexqeo/compalius.git"
+  },
   "devDependencies": {
     "colors": "^1.1.0",
     "less": "^2.5.0",
@@ -12,5 +17,30 @@
   },
   "bin": {
     "cpalius": "./bin/cpalius"
-  }
+  },
+  "keywords": [
+    "compile less",
+    "compile scss",
+    "compile sass",
+    "compile stylus",
+    "compile styl",
+    "compile css",
+    "css",
+    "less",
+    "sass",
+    "scss",
+    "stylus",
+    "styl",
+    "css compiler",
+    "less compiler",
+    "scss compiler",
+    "sass compiler",
+    "stylus compiler",
+    "styl compiler",
+    "less css",
+    "scss css",
+    "sass css",
+    "stylus css",
+    "styl css"
+  ]
 }
