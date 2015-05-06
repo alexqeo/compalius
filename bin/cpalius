@@ -11,9 +11,9 @@ if(args[0]){
 	var execString;
 	var fileExtension = args[0].split('.').pop();
 	var targetFile = (args[2]) ? args[2] : args[0].split('.').shift() + '.css';
-	if(fileExtension == 'less') execString = './node_modules/less/bin/lessc ' + args[0] + ' > ' + targetFile;
-	else if(fileExtension == 'scss') execString = './node_modules/node-sass/bin/node-sass <' + args[0] + '> ' + targetFile;
-	else if(fileExtension == 'styl') execString = './node_modules/stylus/bin/stylus < ' + args[0] + ' > ' + targetFile;
+	if(fileExtension == 'less') execString = __dirname + '/../node_modules/less/bin/lessc ' + args[0] + ' > ' + targetFile;
+	else if(fileExtension == 'scss') execString = __dirname + '/../node_modules/node-sass/bin/node-sass <' + args[0] + '> ' + targetFile;
+	else if(fileExtension == 'styl') execString = __dirname + '/../node_modules/stylus/bin/stylus < ' + args[0] + ' > ' + targetFile;
 	else {
 		console.log('Error: Wrong file extension'.red);
 		process.exit();
