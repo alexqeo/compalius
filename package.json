@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/alexqeo/compalius.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "colors": "^1.1.0",
     "less": "^2.5.0",
     "node-sass": "^2.1.1",
