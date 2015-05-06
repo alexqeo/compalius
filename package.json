@@ -1,6 +1,6 @@
 {
   "name": "compalius",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple shell-compiler to convert .less .styl .scss files into .css",
   "author": "alexqeo",
   "license": "MIT",
