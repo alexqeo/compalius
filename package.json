@@ -18,6 +18,9 @@
   "bin": {
     "cpalius": "./bin/cpalius"
   },
+  "scripts": {
+    "preinstall": "npm install"
+  },
   "keywords": [
     "compile less",
     "compile scss",
