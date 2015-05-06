@@ -2,6 +2,8 @@
 
 Simple shell-compiler to convert .less .styl .scss files into .css
 
+[https://www.npmjs.com/package/compalius](https://www.npmjs.com/package/compalius)
+
 ## Getting Started
 
 Install package:
