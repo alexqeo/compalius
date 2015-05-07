@@ -40,6 +40,8 @@ To minify output file add the -min option in the end:
 
 ```bash
 $ cpalius style.less -min
-or
+
+ or
+
 $ cpalius style.less / my_styles.css -min
 ```
