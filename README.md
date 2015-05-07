@@ -2,7 +2,7 @@
 
 Simple shell-compiler to convert .less .styl .scss files into .css
 
-[https://www.npmjs.com/package/compalius](https://www.npmjs.com/package/compalius)
+[![npm version](https://badge.fury.io/js/compalius.svg)](https://www.npmjs.com/package/compalius)
 
 ## Getting Started
 
@@ -14,7 +14,9 @@ $ npm install -g compalius
 
 ## Usage
 
-Compile file into css:
+### Compile:
+
+Compile file into CSS:
 
 ```bash
 $ cpalius style.(less|scss|styl)
@@ -30,4 +32,14 @@ You can also name output file as you want:
 
 ```bash
 $ cpalius style.less / my_styles.css
+```
+
+### Compile & Minify:
+
+To minify output file add the -min option in the end:
+
+```bash
+$ cpalius style.less -min
+or
+$ cpalius style.less / my_styles.css -min
 ```
