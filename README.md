@@ -14,7 +14,7 @@ $ npm install -g compalius
 
 ## Usage
 
-### Compile:
+### Compile
 
 Compile file into CSS:
 
@@ -34,7 +34,7 @@ You can also name output file as you want:
 $ cpalius style.less / my_styles.css
 ```
 
-### Compile & Minify:
+### Compile & Minify
 
 To minify output file add the -min option in the end:
 
