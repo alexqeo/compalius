@@ -12,7 +12,7 @@ if(args[0]){
 	var fileExtension = args[0].split('.').pop();
 	var targetFile = (args[2]) ? args[2] : (args.indexOf('-min') > -1) ? args[0].split('.').shift() + '.min.css' : args[0].split('.').shift() + '.css';
 	var modulePath = __dirname + '/../node_modules/';
-	var minString = (args.indexOf('-min') > -1) ? ' && cleancss -o ' + targetFile + ' ' + targetFile : '';
+	var minString = (args.indexOf('-min') > -1) ? ' && ' + modulePath + 'clean-css/bin/cleancss -o ' + targetFile + ' ' + targetFile : '';
 	if(fileExtension == 'less') execString = modulePath + 'less/bin/lessc ' + args[0] + ' > ' + targetFile + minString;
 	else if(fileExtension == 'scss') execString = modulePath + 'node-sass/bin/node-sass <' + args[0] + '> ' + targetFile;
 	else if(fileExtension == 'styl') execString = modulePath + 'stylus/bin/stylus < ' + args[0] + ' > ' + targetFile;
