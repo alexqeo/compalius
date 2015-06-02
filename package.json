@@ -1,7 +1,7 @@
 {
   "name": "compalius",
-  "version": "1.1.1",
-  "description": "Simple shell-compiler to convert .less .styl .scss files into .css",
+  "version": "1.2.0",
+  "description": "Simple script to compile all famous web preprocessors formats",
   "author": "alexqeo",
   "license": "MIT",
   "homepage": "https://github.com/alexqeo/compalius",
@@ -10,11 +10,14 @@
     "url": "https://github.com/alexqeo/compalius.git"
   },
   "dependencies": {
+    "clean-css": "^3.2.8",
+    "coffee-script": "^1.9.3",
     "colors": "^1.1.0",
+    "jade": "^1.10.0",
     "less": "^2.5.0",
     "node-sass": "^2.1.1",
     "stylus": "^0.51.1",
-    "clean-css": "^3.2.8"
+    "uglify-js": "^2.4.23"
   },
   "bin": {
     "cpalius": "./bin/cpalius"
@@ -26,22 +29,36 @@
     "compile stylus",
     "compile styl",
     "compile css",
+    "compile coffescript",
+    "compile js",
+    "compile jade",
+    "compile html",
     "css",
     "less",
     "sass",
     "scss",
     "stylus",
     "styl",
+    "js",
+    "jade",
+    "html",
+    "coffescript",
     "css compiler",
     "less compiler",
     "scss compiler",
     "sass compiler",
     "stylus compiler",
     "styl compiler",
+    "coffescript compiler",
+    "js compiler",
+    "jade compiler",
+    "html compiler",
     "less css",
     "scss css",
     "sass css",
     "stylus css",
-    "styl css"
+    "styl css",
+    "coffescript js",
+    "jade html"
   ]
 }

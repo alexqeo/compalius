@@ -10,12 +10,16 @@ var args = process.argv.slice(2);
 if(args[0]){
 	var execString;
 	var fileExtension = args[0].split('.').pop();
-	var targetFile = (args[2]) ? args[2] : (args.indexOf('-min') > -1) ? args[0].split('.').shift() + '.min.css' : args[0].split('.').shift() + '.css';
+	var targetFileExtension = (fileExtension == 'jade') ? 'html' : (fileExtension == 'coffee') ? 'js' : 'css';
+	var targetFile = (args[2]) ? args[2] : (args.indexOf('-min') > -1 && (targetFileExtension == 'css' || targetFileExtension == 'js')) ? args[0].split('.').shift() + '.min.' + targetFileExtension : args[0].split('.').shift() + '.' + targetFileExtension;
 	var modulePath = __dirname + '/../node_modules/';
-	var minString = (args.indexOf('-min') > -1) ? ' && ' + modulePath + 'clean-css/bin/cleancss -o ' + targetFile + ' ' + targetFile : '';
+	var minString = (args.indexOf('-min') > -1 && targetFileExtension == 'css') ? ' && ' + modulePath + 'clean-css/bin/cleancss -o ' + targetFile + ' ' + targetFile :
+		(args.indexOf('-min') > -1 && targetFileExtension == 'js') ? ' && ' + modulePath + 'uglify-js/bin/uglifyjs ' + targetFile + ' -o ' + targetFile + ' -c' : '';
 	if(fileExtension == 'less') execString = modulePath + 'less/bin/lessc ' + args[0] + ' > ' + targetFile + minString;
-	else if(fileExtension == 'scss') execString = modulePath + 'node-sass/bin/node-sass <' + args[0] + '> ' + targetFile;
-	else if(fileExtension == 'styl') execString = modulePath + 'stylus/bin/stylus < ' + args[0] + ' > ' + targetFile;
+	else if(fileExtension == 'scss') execString = modulePath + 'node-sass/bin/node-sass <' + args[0] + '> ' + targetFile + minString;
+	else if(fileExtension == 'styl') execString = modulePath + 'stylus/bin/stylus < ' + args[0] + ' > ' + targetFile + minString;
+	else if(fileExtension == 'jade') execString = modulePath + 'jade/bin/jade.js < ' + args[0] + ' > ' + targetFile + ' -P';
+	else if(fileExtension == 'coffee') execString = modulePath + 'coffee-script/bin/coffee -p ' + args[0] + ' > ' + targetFile + minString;
 	else {
 		console.log('Error: Wrong file extension'.red);
 		process.exit();
@@ -26,7 +30,8 @@ if(args[0]){
 	      console.log(error.red);
 	    }
 	    else {
-	    	var logString = 'Compiled successfully into ' + targetFile;
+	    	var logMinString = (args.indexOf('-min') > -1) ? '& minified ' : '';
+	    	var logString = 'Compiled ' + logMinString + 'successfully into ' + targetFile;
 	    	console.log(logString.green);	
 	    }
 	});
