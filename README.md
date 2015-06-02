@@ -19,28 +19,25 @@ $ npm install -g compalius
 #### Less, Sass, Stylus -> CSS
 
 ```bash
-$ cpalius style.(less|scss|styl)
+$ cpalius styles.(less|scss|styl)
 ```
 
-For example, this command will compile new **style.css** file:
+For example, this command will compile new **styles.css** file:
 
 ```bash
-$ cpalius style.less
+$ cpalius styles.less
 ```
 
 You can also name output file as you want:
 
 ```bash
-$ cpalius style.less / my_styles.css
+$ cpalius styles.less / my_styles.css
 ```
 
 #### CoffeScript -> JS
 
 ```bash
 $ cpalius scripts.coffee
-```
-
-```bash
 $ cpalius scripts.coffee / my_scripts.js
 ```
 
@@ -48,9 +45,6 @@ $ cpalius scripts.coffee / my_scripts.js
 
 ```bash
 $ cpalius index.jade
-```
-
-```bash
 $ cpalius index.jade / index.html
 ```
 
@@ -59,11 +53,11 @@ $ cpalius index.jade / index.html
 To minify output file add the -min option in the end:
 
 ```bash
-$ cpalius style.less -min
+$ cpalius styles.less -min
 $ cpalius scripts.coffee -min
 
  or
 
-$ cpalius style.less / my_styles.min.css -min
+$ cpalius styles.less / my_styles.min.css -min
 $ cpalius scripts.coffee / my_scripts.min.js -min
 ```
